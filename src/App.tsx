@@ -1,26 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home/HomePage";
 import { Toaster } from "@/components/ui/sonner";
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+import Contact from "./pages/contact/Contact";
+import Navbar from "./components/header/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
-      <Button
-        onClick={() =>
-          toast("Event has been created", {
-            description: "Sunday, December 03, 2023 at 9:00 AM",
-          })
-        }
-      >
-        Show Toast
-      </Button>
-
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
         <Toaster />
       </BrowserRouter>
     </>
